@@ -1,0 +1,15 @@
+﻿@model QuanLiBan
+@{
+    List<QuanLiBan> Tables = new List<QuanLiBan>();
+    TableList TBL = new TableList();
+    Tables = TBL.GetTables();
+}
+
+
+@foreach(QuanLiBan Ban in Tables){
+    <div class="table" data-invoice-id="@Ban.ID">
+            <img class="img-table" src="~/img/table.png" alt="">
+            <h4 class="table-name">@Ban.TableName</h4>
+    </div>
+}
+

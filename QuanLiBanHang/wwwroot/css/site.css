@@ -1,0 +1,200 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  height:100%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+#left, #right {
+    display: inline-block;
+    padding: 10px;
+    width: 50%;
+    height: 100vh;
+    background-color: blue;
+    padding-bottom: 10px;
+}
+
+#right {
+    float: right;
+}
+#table-id {
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    margin-left: 50px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    width: 100px;
+    min-height: 40px;
+    background-color: #fff;
+    color: #000;
+}
+
+.nav {
+    margin-left: 40px;
+    display: inline-block;
+}
+
+.nav li {
+    height: 38px;
+    display: inline-block;
+    list-style: none;
+    padding: 6px 10px;
+    background-color: aliceblue;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    cursor: pointer;
+}
+
+.search-box {
+    padding: 5px 0 5px 20px;
+    display: inline-block;
+    margin-left: 20px;
+    width: 40%;
+    border-radius: 50rem;
+    border: none;
+    margin-bottom: 2px;
+}
+
+.container {
+    overflow: auto;
+    background-color: #fff;
+    width: 100%;
+    height: 720px;
+    border-radius: 20px;
+    padding: 10px 10px 10px 20px;
+}
+
+.menu {
+    border-radius: 10px;
+    display: inline-block;
+    width: 16%;
+    height: 135px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    margin: 20px 11px;
+    cursor: pointer;
+}
+
+.menu-name {
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.table {
+    border-radius: 10px;
+    display: inline-block;
+    width: 16%;
+    height: 135px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    margin: 20px 11px;
+    cursor: pointer;
+}
+
+.img-table {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+.table-name {
+    text-align: center;
+    text-transform: uppercase;
+}
+.active {
+    background-color: cornflowerblue;
+}
+
+
+.bill {
+    width: 100%;
+    height: calc(100vh - 160px);
+}
+
+label {
+    font-size: 20px;
+    font-weight: 700;
+    display: inline-block;
+    min-width: 100px;
+}
+
+.pay {
+    background-color: rgb(82, 82, 252);
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 0 50px;
+    margin-bottom: 20px;
+    margin-left: 100px;
+}
+
+#cash {
+
+    text-align: center;
+    color: red;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+
+.footer {
+    background-color: #fff;
+    max-width: 800px;
+    padding: 10px;
+    border-top: 1px solid #333;
+    position: absolute;
+    bottom: 0;
+    white-space: nowrap;
+    line-height: 30px;
+    margin-bottom: 16px;
+    border-bottom-right-radius: 20px;
+}
+
+
+.bill-detail {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    border-collapse: unset;
+    background-color: #999;
+}
+
+
+.bill-detail tr th, .bill-detail tr td {
+    background-color: #999;
+    border: none;
+    padding: 10px;
+}
+
+.logOut-btn {
+    float: right;
+    margin-right: 20px;
+    border-radius: 5px;
+}

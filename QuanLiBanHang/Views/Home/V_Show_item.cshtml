@@ -1,0 +1,42 @@
+﻿@model List<M_Menu>
+
+
+@foreach (M_Menu item in Model)
+{
+    <div class="menu" data-item-id="@item.Id">
+        <img class="img-table" src="~/img/mon.png" alt="">
+        <h4 class="menu-name">@item.Name</h4>
+    </div>
+}
+
+
+<script>
+    $(document).ready(function () {
+        $('.menu').click(function () {
+            var item_id = $(this).data('item-id');
+            var table_id = document.getElementById("table-id").dataset.tableId;
+            $.ajax({
+                url: '/Home/Insert_item' ,
+                type: 'GET',
+                data: {
+                    tableId: table_id, 
+                    itemId: item_id,
+                },
+                success: function (result) {
+                    
+                    $('#billDetail').html(result);
+                    $.ajax({
+                        url: "/Home/getTotalItem",
+                        data: {
+                            tableId: table_id,
+                        },
+                        method: "POST",
+                        success: function (result) {
+                            $('#cash').val(result.toLocaleString());
+                        },
+                    });
+                }
+            });
+        });
+    });
+</script>

@@ -1,0 +1,45 @@
+﻿<style>
+    .form-wrapper {
+        display: flex;
+    }
+
+    #left-section {
+        flex: 1;
+        text-align: center;
+    }
+
+    .right-section {
+        width: 250px;
+        margin-left: 20px;
+        margin-right: 100px;
+    }
+
+    .right-section label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .right-section input {
+        display: block;
+        margin-bottom: 20px;
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+</style>
+<div class="form-wrapper">
+    <div id="left-section">
+        <!-- Chi tiết hóa đơn ở đây -->
+        
+    </div>
+    <div class="right-section">
+        <label for="total">Tổng tiền:</label>
+        <input type="text" id="total" name="total" readonly>
+        <label for="paid">Khách trả:</label>
+        <input type="text" id="paid" name="paid">
+        <label for="change">Trả lại:</label>
+        <input type="text" id="change" name="change" readonly>
+    </div>
+</div>

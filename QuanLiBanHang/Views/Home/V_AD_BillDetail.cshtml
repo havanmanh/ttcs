@@ -1,0 +1,48 @@
+﻿@model List<M_AD_BillDetail>
+
+<style>
+    .AD-bill-detail{
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+        border-collapse: unset;
+    }
+    #bill-out-container {
+        position: relative;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #eee;
+    }
+</style>
+    <h2 style="text-align:center">Hóa đơn</h2>
+
+<!-- <h5>Tổng: </h5> -->
+    <table class="bill-detail">
+        <tr>
+            <th>Món</th>
+            <th>Giá</th>
+            <th>Số lượng</th>
+            <th>thành tiền</th>
+        </tr>
+
+        @foreach (M_AD_BillDetail item in Model)
+        {
+            <tr>
+                <td>@item.tenMon</td>
+                <td>@item.gia</td>
+                <td>@item.soLuong</td>
+                <td>@item.thanhTien</td>
+            </tr>
+        }
+    </table>
+    <button id="close-btn">Đóng</button>
+
+<script>
+    
+    document.querySelector('#close-btn').addEventListener('click', function () {
+        // Ẩn div chứa chi tiết hóa đơn
+        document.querySelector('#full').setAttribute("style", "display: none");
+    });
+</script>

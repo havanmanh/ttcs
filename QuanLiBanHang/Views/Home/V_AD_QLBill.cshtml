@@ -1,0 +1,32 @@
+﻿@model List<M_AD_QLBill>
+
+<form id="searchBill-byDate">
+    <input type="date" name="date" id="date" >
+    <button type="button" id="searchBillBtn">Tìm</button>
+</form>
+<h2 class="content">Danh sách hóa đơn</h2>
+<table>
+    <tr>
+        <th>Mã hóa đơn</th>
+        <th>Bàn</th>
+        <th>Tổng giá</th>
+        <th>Thời gian thanh toán</th>
+        <th>Tùy chọn</th>
+    </tr>
+
+    @foreach(M_AD_QLBill item in Model)
+    {
+        <tr>
+            <td>@item.MaHD</td>
+            <td>@item.TenBan</td>
+            <td>@item.Gia</td>
+            <td>@item.ThoiGian</td>
+            <td><a class="view-billDetail pointer" data-bill-id="@item.MaHD">xem chi tiết</a>|<a class="dell-bill pointer" data-bill-id="@item.MaHD">Xóa</a></td>
+        </tr>
+    }
+</table>
+<div id="full">
+    <div id="bill-out" >
+        <!-- Nội dung chi tiết hóa đơn -->
+    </div>
+</div>

@@ -1,0 +1,93 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = QuanLiBanHang
+build_property.RootNamespace = QuanLiBanHang
+build_property.ProjectDir = D:\HaManh\ThucTapCoSo\QuanLiBanHang\QuanLiBanHang\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\HaManh\ThucTapCoSo\QuanLiBanHang\QuanLiBanHang
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/HaManh/ThucTapCoSo/QuanLiBanHang/QuanLiBanHang/Views/Home/empty.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxlbXB0eS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HaManh/ThucTapCoSo/QuanLiBanHang/QuanLiBanHang/Views/Home/PayForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXlGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HaManh/ThucTapCoSo/QuanLiBanHang/QuanLiBanHang/Views/Home/V_ADMIN_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWX0FETUlOX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HaManh/ThucTapCoSo/QuanLiBanHang/QuanLiBanHang/Views/Home/V_AD_BillDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWX0FEX0JpbGxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HaManh/ThucTapCoSo/QuanLiBanHang/QuanLiBanHang/Views/Home/V_AD_insertMenu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWX0FEX2luc2VydE1lbnUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HaManh/ThucTapCoSo/QuanLiBanHang/QuanLiBanHang/Views/Home/V_AD_QLBill.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWX0FEX1FMQmlsbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HaManh/ThucTapCoSo/QuanLiBanHang/QuanLiBanHang/Views/Home/V_AD_QLMenu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWX0FEX1FMTWVudS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HaManh/ThucTapCoSo/QuanLiBanHang/QuanLiBanHang/Views/Home/V_AD_ThongKe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWX0FEX1Rob25nS2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HaManh/ThucTapCoSo/QuanLiBanHang/QuanLiBanHang/Views/Home/V_BillDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWX0JpbGxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HaManh/ThucTapCoSo/QuanLiBanHang/QuanLiBanHang/Views/Home/V_Employe_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWX0VtcGxveWVfTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HaManh/ThucTapCoSo/QuanLiBanHang/QuanLiBanHang/Views/Home/V_Form_exchangeMenu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWX0Zvcm1fZXhjaGFuZ2VNZW51LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HaManh/ThucTapCoSo/QuanLiBanHang/QuanLiBanHang/Views/Home/V_Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWX0xvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HaManh/ThucTapCoSo/QuanLiBanHang/QuanLiBanHang/Views/Home/V_Menu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWX01lbnUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HaManh/ThucTapCoSo/QuanLiBanHang/QuanLiBanHang/Views/Home/V_Show_item.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWX1Nob3dfaXRlbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HaManh/ThucTapCoSo/QuanLiBanHang/QuanLiBanHang/Views/Home/V_Tables.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWX1RhYmxlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HaManh/ThucTapCoSo/QuanLiBanHang/QuanLiBanHang/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HaManh/ThucTapCoSo/QuanLiBanHang/QuanLiBanHang/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HaManh/ThucTapCoSo/QuanLiBanHang/QuanLiBanHang/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/HaManh/ThucTapCoSo/QuanLiBanHang/QuanLiBanHang/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-44yj7q1qzc

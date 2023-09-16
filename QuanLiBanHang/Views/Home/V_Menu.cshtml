@@ -1,0 +1,65 @@
+﻿<style>
+    .menu-nav {
+        display: inline-block;
+        padding: 5px;
+        border-radius: 5px;
+        margin: 0 4px;
+        background-color: #eee;
+    }
+
+    .menu-nav:hover {
+        cursor: pointer;
+        background-color: #ddd;
+    }
+
+    .menu-header {
+        background-color: white
+    }
+    ul {
+        margin-bottom:0;
+    }
+</style>
+
+<div class="menu-header">
+    <ul >
+        <li class="menu-nav" data-menu-option="">Tất cả</li>
+        <li class="menu-nav" data-menu-option="buffet">Buffet</li>
+        <li class="menu-nav" data-menu-option="drink">Nước ngọt</li>
+        <li class="menu-nav" data-menu-option="tea">Trà</li>
+        <li class="menu-nav" data-menu-option="wine">Rượu-bia</li>
+    </ul>
+</div>
+
+<div id="menu-container">
+    
+</div>
+
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: '/Home/PartMenu/' ,
+            type: 'GET',
+            data: {
+                option: "",
+            },
+            success: function (result) {
+                $('#menu-container').html(result);
+            }
+        });
+
+        $('.menu-nav').click(function () {
+            var option = $(this).data('menu-option');
+            $.ajax({
+                url: '/Home/PartMenu/' + option,
+                type: 'GET',
+                data: {
+                    option: option,
+                },
+                success: function (result) {
+                    $('#menu-container').html(result);
+                }
+            });
+        });
+
+    });
+</script>

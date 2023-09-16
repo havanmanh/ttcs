@@ -1,0 +1,17 @@
+﻿@model List<M_AD_ThongKe>
+
+    <H2 class="content">Thống kê 5 ngày gần nhất</H2>
+
+<table>
+    <tr>
+        <th>Ngày</th>
+        <th>Thu nhập</th>
+    </tr>
+
+    @foreach(var item in Model){
+        <tr>
+            <td>@item.day</td>
+            <td>@item.money.ToString("#,##0")</td>
+        </tr>
+    }
+</table>

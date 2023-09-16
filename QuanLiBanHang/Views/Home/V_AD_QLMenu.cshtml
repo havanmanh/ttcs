@@ -1,0 +1,30 @@
+﻿@model List<M_AD_QLMenu>
+
+<form id="searchMenu-byName">
+    <input type="text" name="name" id="name" placeholder="Tìm món">
+    <button type="button" id="searchMenuBtn">Tìm</button>
+</form>
+
+<h5 id="insert-menu">Thêm món</h5>
+<h2 class="content">Danh sách hóa đơn</h2>
+<table>
+    <tr>
+        <th>Món</th>
+        <th>Giá</th>
+        <th>Loại</th>
+        <th>Tùy chọn</th>
+    </tr>
+
+    @foreach (M_AD_QLMenu item in Model)
+    {
+        <tr>
+            <td>@item.TenMon</td>
+            <td>@item.Gia</td>
+            <td>@item.Loai</td>
+            <td><a class="update-menu pointer" data-item-id="@item.id">sửa</a>|<a class="dell-menu pointer" data-item-id="@item.id">Xóa</a></td>
+        </tr>
+    }
+</table>
+<div id="full">
+    
+</div>

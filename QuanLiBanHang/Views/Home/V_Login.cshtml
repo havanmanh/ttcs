@@ -1,0 +1,128 @@
+﻿
+<style>
+	.login {
+		display: flex;
+		justify-items: center;
+		padding-top: 150px;
+	}
+
+	.login-nd {
+		justify-items: center;
+		width: 484px;
+		text-align: center;
+		background: white;
+		box-sizing: border-box;
+		margin: 30px auto;
+		background: #cbc4dc;
+	}
+
+	.login-top h2 {
+		color: black;
+		font-size: 40px;
+		font-family: sans-serif;
+		margin: 20px 0;
+	}
+
+	.login-center {
+		margin: 0 auto;
+	}
+
+	.login-item {
+		margin-bottom: 20px;
+		text-align: left;
+		margin-left: 25px;
+	}
+
+	.login-center input {
+		width: 400px;
+		height: 50px;
+		border: 2px solid #e4e4e4;
+		background: rgba(255, 255, 255, 0.1);
+		margin: 10px 0;
+		box-sizing: border-box;
+		font-size: 17px;
+		padding-left: 50px;
+	}
+
+	.login-center i {
+		position: relative;
+		left: -380px;
+		color: black;
+	}
+
+	::-webkit-input-placeholder {
+		color: black;
+	}
+
+	.login-center .btn {
+		width: 248px;
+		padding-right: 40px;
+		height: 50px;
+		background: #5257ce;
+		border: none;
+		color: white;
+		font-size: 20px;
+		cursor: pointer;
+		transition: .3s;
+		margin: 20px 0;
+		text-align: center;
+	}
+
+		.login-center .btn:hover {
+			box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+		}
+
+	.login-bottom {
+		display: flex;
+		justify-content: space-between;
+		margin: 0 25px 30px 25px;
+	}
+
+		.login a {
+			padding-left: 100px;
+			color: #338DBC;
+		}
+
+</style>
+
+    <div class="login">
+        <div class="login-nd">
+            <div class="login-top">
+                <a style="font-size: 40px;">SIGN IN</a>
+            </div>
+            <div class="login-center">
+                <form method="post">
+                    <p style="padding-right: 321px;font-size: 14px;">USER NAME</p>
+                    <input required type="text" name="UserName" placeholder="User name" value="">
+                    <p style="padding-right: 321px;font-size: 14px;margin-top: 20px;">USER NAME</p>
+                    <input required type="password" name="PassWord" placeholder="Password" value="">
+                    <input type="submit" class="btn" name="login" value="LOGIN">
+                </form>
+            </div>
+        </div>
+    </div>
+
+	<script>
+	const form = document.querySelector('form');
+	form.addEventListener('submit', (event) => {
+		event.preventDefault();
+		const formData = new FormData(form);
+			const username = formData.get('UserName');
+			const password = formData.get('PassWord');
+		// sử dụng username và password ở đây
+	
+
+		$.ajax({
+		url: '/Home/Login',
+		type: 'POST',
+		data: {
+			username: username,
+			password: password
+		},
+			success: function (result) {
+				if(result.url )
+				window.location.href = result.url;
+		},
+		});
+	});
+</script>

@@ -1,0 +1,193 @@
+﻿@model List<Ban_HoaDon> 
+
+    
+<style>
+.qty-input {
+    background-color: #fff;
+    height: 2.2rem;
+    width: 3rem;
+    text-align: center;
+    font-size: 1rem;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+.increase-qty, .decrease-qty {
+    width: 30px;
+    height: 30px;
+    border-radius: 1rem;
+}
+/*  */
+    .d-ib {
+        font-size: 20px;
+        display: inline-block;
+    }
+
+    .item {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background-color: white;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .del {
+        width: 4%;
+    }
+
+    .name {
+        width: 40%;
+    }
+
+    .price {
+        width: 20%;
+        text-align: center;
+        line-height: 45px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .total {
+        width: 10px;
+        text-align: right;
+    }
+
+    .fa-bin::before {
+        content: "\f1f8";
+        
+    }
+
+    </style>
+@foreach (var bill in Model)
+{
+    <div class="item" data-table-id="@bill.MaBan">
+        <div class="del d-ib">
+            <i class="fa-solid fa-trash fa-bin" data-item-id="@bill.MaMon"></i>
+        </div>
+        <div class="name d-ib item" data-item-id="@bill.MaMon">@bill.TenMon</div>
+        <div class="quantity d-ib">
+            <button class="decrease-qty" data-item-id="@bill.MaMon" data-table-id="@bill.MaBan">-</button>
+            <input type="text" value="@bill.SoLuong" class="qty-input" readonly/>
+            <button class="increase-qty" data-item-id="@bill.MaMon" data-table-id="@bill.MaBan">+</button>
+        </div>
+        @{
+            string Gia_fomated = bill.Gia.ToString("#,##0");
+            <div class="price d-ib">@Gia_fomated</div>
+            string TongTien = (bill.Gia * bill.SoLuong).ToString("#,##0");
+        }
+        <div class="total d-ib">@TongTien</div>
+    </div>
+}
+
+    <div class="footer">
+    <form id="myForm" class="pay-box">
+        <label>Tổng tiền: </label>
+        <input id="cash" name="cash" type="text" value="0" readonly>
+        <input type="submit" class="pay" value="Thanh toán">
+    </form>
+    </div>
+
+<script >
+    $('#myForm').submit(function (event) {
+        event.preventDefault(); // ngăn chặn việc submit mặc định của form
+        var item_id = $(this).data('item-id');
+        //var table_id = document.getElementById("table-id").getAttribute("data-table_id");
+        var table_id = document.getElementById("table-id").dataset.tableId;
+        // lấy dữ liệu từ các trường trong form
+        var cash = parseInt($('#cash').val().replace(/\./g, ''));
+        // gửi dữ liệu lên server bằng Ajax
+        $.ajax({
+            url: '/Home/Pay',
+            type: 'POST',
+            data: {
+                tableId: table_id,
+                itemId: item_id,
+                cash: cash,
+            },
+            success: function (response) {
+                $('#billDetail').html(response);
+                console.log(cash)
+                console.log(table_id)
+                // xử lý kết quả trả về từ server
+            },
+            
+        });
+    });
+
+    // Nhân viên Xóa món 
+    $('.fa-trash').click(function () {
+        var itemId = $(this).data('item-id');
+        var tableId = $(this).closest('.item').data('table-id');
+        $.ajax({
+            url: '/Home/Del_item',
+            type: 'POST',
+            data: { itemId: itemId, tableId: tableId },
+            success: function (result) {
+                $.ajax({
+                    url: '/Home/billDetail?id=' + tableId,
+                    type: 'GET',
+                    success: function (result) {
+                        $('#billDetail').html(result);
+                        $.ajax({
+                            url: "/Home/getTotalItem",
+                            data: {
+                                tableId: tableId,
+                            },
+                            method: "POST",
+                            success: function (result) {
+                                $('#cash').val(result.toLocaleString());
+                            },
+                        });
+                    }
+                });
+
+
+                // Cập nhật lại hóa đơn
+                alert('Xóa món thành công');
+                // ...
+            },
+        });
+    });
+
+
+        // Lắng nghe sự kiện nhấp vào nút tăng / giảm số lượng
+    $(".quantity").on("click", ".decrease-qty, .increase-qty", function () {
+        var item = $(this).closest('.item');
+        // Tìm input số lượng và giá trị hiện tại của nó
+        var input = $(this).siblings(".qty-input");
+        var qty = parseInt(input.val());
+        var price = parseInt(item.find('.price').text().replace('.', ''));
+
+        var tableId = $(this).data("table-id");
+        var itemId = $(this).data("item-id");
+
+        // Nếu nhấn vào nút tăng số lượng, tăng giá trị của số lượng, ngược lại giảm giá trị của số lượng
+        if ($(this).hasClass("increase-qty")) {
+            qty++;
+        } else if (qty > 1) {
+            qty--;
+        }
+
+        var subTotal = qty * price;
+        item.find('.total').text(subTotal.toLocaleString('en-US'));
+        input.val(qty);
+        // Cập nhật giá trị số lượng
+        // Gửi yêu cầu Ajax để cập nhật số lượng trên máy chủ
+        $.ajax({
+            url: "/Home/UpdateQuantity",
+            data: {
+                itemId: itemId,
+                tableId: tableId,
+                qty: qty,
+            },
+            method: "POST",
+            success: function (result) {
+                $('#cash').val(result.toLocaleString());
+            },
+                
+        });
+    });
+    
+</script>
